@@ -1,0 +1,1252 @@
+/* html, body{
+    
+    width:100%;
+    height: 100%;
+    margin:0px;
+    /* overflow-x:hidden; */
+    /* padding : 0px; */
+/* } */ 
+html,body {
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+/*  importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+    /* display: flex; */
+  justify-content: center;
+    padding: 30px;
+    
+}
+a:link {
+    color: gray;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: gray;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+.max-width{
+    max-width: 2000px;
+    padding: 0 80px;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    margin: auto;
+}
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    /* background: black; */
+    z-index: 999;
+    font-family:'Ubuntu',sans-serif;
+    transition: all 0.3 ease;
+    overflow: auto;
+    
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background-color:black;
+    overflow:auto;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: white;
+    font-size: 50px;
+    font-weight: 500;
+}
+.navbar .logo a span{
+    color:white;
+    /* background-color: #111; */
+    transition: all 0.3 ease;
+}
+.navbar.sticky .logo a span{
+    color: white;
+}
+/* commented by me */
+/* .navbar .menu li{
+    list-style: none;
+    display: inline-block;
+} */
+/* .navbar .menu li a{
+    display: block;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 10px;
+    transition: color 0.3 ease;
+} */
+.navbar .menu li a:hover{
+    color:gray;
+}
+.navbar.sticky .menu li a:hover{
+    color: white;
+}
+/* menu button styling  */
+/* this one */
+/* .menu-btn{
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+} */
+/* till here  */
+/* from here */
+.menu-btn{
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    display: block;
+    z-index: 999;
+}
+.menu-btn i.active:before{
+    content: "\f00d";
+}
+/* .navbar-default {
+    background-color: firebrick;
+  } */
+.navbar .menu{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    background: #111;
+    text-align: center;
+    padding-top: 0px;
+    transition: all 0.3s ease;
+}
+.navbar .menu.active{
+    left: 0;
+}
+.navbar .menu li{
+    list-style: none;
+    /* display: inline-block; */
+    display: block;
+}
+.navbar .menu li a{
+    /* display: block; */
+    color: white;
+    /* font-size: 20px; */
+    font-weight: 600;
+    /* margin-left: 10px; */
+    transition: color 0.3 ease;
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 20px;
+}
+/* home section styling */
+.home{
+    display: flex;
+    background: url("images/arria.jpg") no-repeat center;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    color:white;
+    min-height: 500px;
+    font-family:'Ubuntu',sans-serif;
+}
+.home .max-width{
+    margin: auto 0px  40px;
+    text-align: center;
+}
+.home .home-content .text{
+    font-size: 70px;
+    font-weight: 400;
+    text-align: center;
+    
+}
+.home .home-content .text span{
+    font-size: 70px;
+    font-weight: 400;
+    text-align: center;
+    
+
+}
+
+/* all common styling */
+section{
+    padding: 100px 0;
+}
+section .title
+{
+    position: relative;
+    text-align: center;
+    font-size: 50px ;
+    font-weight: 400;
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+    font-family: 'Ubuntu',sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    margin: auto 0px  40px;
+    /* width: 225px;
+    height: 3px;
+    bottom: 0px; */
+    left: 50%;
+    background: black;
+    transform: translateX(-50%);
+}
+
+/* About section styling */
+
+.about, .experience, .education, .project, .skills, .position, .workshop, .achievements, .extra, .hobbies, .contact, footer{
+    font-family: 'Poppins',sans-serif;
+}
+
+
+/* section .title::after{
+    content:"";
+    position: absolute;
+    bottom:-12px;
+    left:50%;
+    font-size: 20px;
+    color: black;
+    padding: 5px;
+    background: black;
+    transform: translateX(-50%);
+
+} 
+If want to add anything later here place it in "" */
+
+.about .about-content,
+.experience .experience-content,.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.about .about-content .left{
+    margin: auto 0px  40px;
+    /* width: 45%; */
+}
+
+.about .about-content .left img{
+    margin: auto 0px  40px;
+    /* height: 700px;
+    width: 500px; */
+    object-fit: cover;
+    border-radius: 15px;
+}
+.about .about-content .right{
+    width: 100%;
+}
+.about .about-content .right .text{
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 1px;
+}
+.about .about-content .right .text span{
+    color:black;
+}
+.about .about-content .right p{
+    text-align: justify;
+    font-size: 20px;
+    font-weight: 300;
+}
+.about .about-content .right a{
+    display: inline-block;
+    background: black;
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid black;
+    transition: all 0.3s ease;
+
+}
+
+.about .about-content .right a:hover{
+    color:black;
+    background: none;
+}
+
+/* Experience section styling */
+/* .experience .title::after{
+
+
+} 
+if want to add anything later comes here 
+*/
+.experience{
+    color: white;
+    background: black;
+    text-align: center;
+    font-size: 20px;
+    justify-content: center;
+    margin: 0 auto;
+}
+.experience .experience-content .text {
+    text-align: center;
+    color: black;
+    justify-content: center;
+}
+
+.experience .experience-content .card i {
+    text-align: center;
+    font-size: 40px;
+    color: black;
+    transition: color 0.3s ease;
+}
+.experience .experience-content .card .text{
+    font-size: 25px;
+}
+.experience .experience-content .card .box {
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 40px;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.experience .experience-content .card:hover .box{
+    transform: scale(1.10);
+
+}
+.experience .experience-content .card:hover{
+    background: black;
+
+}
+.experience .experience-content .card:hover i{
+    color: white;
+
+}
+.experience .experience-content .card:hover p{
+    color: white;
+
+}
+.experience .experience-content .card:hover .text{
+    color: white;
+
+}
+.experience .experience-content p {
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    justify-content: center;
+}
+.experience .title::before{
+    content: "";
+    background:white;
+    width: 380px;
+}
+.experience .title::after{
+    content: "";
+    background: black;
+
+}
+.experience .experience-content .card{
+    width:100%;
+    transition: all 0.3s ease;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    padding: 25px 25px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin: 0 auto;
+} 
+
+/* education section styling */
+.education{
+    background-color: rgb(235, 227, 227);
+    font-size: 20px;
+    font-weight: 500;
+    height: 2px;
+}
+.education .carousel .card{
+    background:white;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: black;
+    margin-bottom: 20px;
+}
+.education .carousel .card:hover{
+    background: black;
+}
+.education .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.education .carousel .card:hover .box{
+    transform: scale(1.02);
+}
+.education .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.education .carousel .card:hover .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.education .carousel .card:hover p{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.education .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    transition: all 0.3s ease;
+}
+.education .carousel .card:hover img{
+    border-color: #fff;
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid gray!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: gray!important;
+}
+
+/* Project section styling */
+.project{
+    background: black;
+}
+.project .title::before{
+    content: "";
+    background:white;
+    width: 170px;
+}
+.project .title::after{
+    content: "";
+    background: white;
+
+}
+.project .carousel .card{
+    background:black;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color:white;
+    margin-bottom: 20px;
+}
+.project .carousel .card:hover{
+    background: white;
+}
+.project .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.project .title{
+    color: white;
+}
+.project .carousel .card:hover .box{
+    transform: scale(1.02);
+}
+.project .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.project .carousel .card:hover .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.project .carousel .card:hover p{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.project .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid black;
+    transition: all 0.3s ease;
+}
+.project .carousel .card:hover img{
+    border-color: #fff;
+}
+
+/* skills section styling */
+.skills{
+    background: white;
+}
+.skills .title::before{
+    content: "";
+    background:black;
+    width: 120px;
+}
+.skills .title::after{
+    content: "";
+    background: black;
+
+}
+.skills .carousel .card{
+    background:white;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color:black;
+    margin-bottom: 20px;
+}
+.skills .carousel .card:hover{
+    background: black;
+}
+.skills .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.skills .title{
+    color: black;
+}
+.skills .carousel .card:hover .box{
+    transform: scale(1.02);
+}
+.skills .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.skills .carousel .card:hover .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.skills .carousel .card:hover p{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.skills .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    transition: all 0.3s ease;
+}
+.skills .carousel .card:hover img{
+    border-color:black;
+}
+
+/* Workshop section */
+.workshop{
+    background: white;
+}
+.workshop .title::before{
+    content: "";
+    background:black;
+    width: 770px;
+}
+.workshop .title::after{
+    content: "";
+    background: black;
+
+}
+.workshop .carousel .card{
+    background:white;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color:black;
+    margin-bottom: 20px;
+}
+.workshop .carousel .card:hover{
+    background: black;
+}
+.workshop .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.workshop .title{
+    color: black;
+}
+.skills .carousel .card:hover .box{
+    transform: scale(1.02s);
+}
+.workshop .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.workshop .carousel .card:hover .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.workshop .carousel .card:hover p{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.workshop .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    transition: all 0.3s ease;
+}
+.workshop .carousel .card:hover img{
+    border-color:black;
+}
+
+/* Extracurricular activities styling */
+.extra{
+    background: white;
+}
+.extra .title::before{
+    content: "";
+    background:black;
+    width: 560px;
+}
+.extra .title::after{
+    content: "";
+    background: black;
+
+}
+.extra .carousel .card{
+    background:white;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color:black;
+    margin-bottom: 20px;
+}
+.extra .carousel .card:hover{
+    background: black;
+}
+.extra .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.extra .title{
+    color: black;
+}
+.extra .carousel .card:hover .box{
+    transform: scale(1.02);
+}
+.extra .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.extra .carousel .card:hover .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.extra .carousel .card:hover p{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.extra .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    transition: all 0.3s ease;
+}
+.extra .carousel .card:hover img{
+    border-color:black;
+}
+
+/* achievements section */
+.achievements{
+    background: black;
+}
+.achievements .title::before{
+    content: "";
+    background:white;
+    width: 330px;
+}
+.achievements .title::after{
+    content: "";
+    background: white;
+
+}
+.achievements .carousel .card{
+    background:black;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color:white;
+    margin-bottom: 20px;
+}
+.achievements .carousel .card:hover{
+    background: white;
+}
+.achievements .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.achievements .title{
+    color: white;
+}
+.achievements .carousel .card:hover .box{
+    transform: scale(1.02);
+}
+.achievements .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.achievements .carousel .card:hover .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.achievements .carousel .card:hover p{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.achievements .carousel .card:hover a{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.achievements .carousel .card a{
+    font-size: 15px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color:white;
+}
+.achievements .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid black;
+    transition: all 0.3s ease;
+}
+.achievements .carousel .card:hover img{
+    border-color: #fff;
+}
+
+/* hobbies section  */
+.hobbies{
+    background: black;
+}
+.hobbies .title::before{
+    content: "";
+    background:white;
+    width: 495px;
+}
+.hobbies .title::after{
+    content: "";
+    background: white;
+
+}
+.hobbies .carousel .card{
+    background:black;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color:white;
+    margin-bottom: 20px;
+}
+.hobbies .carousel .card:hover{
+    background: white;
+}
+.hobbies .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.hobbies .title{
+    color: white;
+}
+.hobbies .carousel .card:hover .box{
+    transform: scale(1.02);
+}
+.hobbies .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.hobbies .carousel .card:hover .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.hobbies .carousel .card:hover p{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.hobbies .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid black;
+    transition: all 0.3s ease;
+}
+.hobbies .carousel .card:hover img{
+    border-color: #fff;
+}
+
+
+
+/* Position section styling */
+.position{
+    background: black;
+}
+.position .title::before{
+    content: "";
+    background:white;
+    width: 725px;
+}
+.position .title::after{
+    content: "";
+    background: white;
+
+}
+.position .carousel .card{
+    background:black;
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color:white;
+    margin-bottom: 20px;
+}
+.position .carousel .card:hover{
+    background: white;
+}
+.position .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.position .title{
+    color: white;
+}
+.position .carousel .card:hover .box{
+    transform: scale(1.02);
+}
+.position .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: white;
+}
+.position .carousel .card:hover .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.position .carousel .card:hover p{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+    color: black;
+}
+.position .carousel .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid black;
+    transition: all 0.3s ease;
+}
+.position .carousel .card:hover img{
+    border-color: #fff;
+}
+
+/* contact section styling */
+.contact{
+    padding: 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.contact .title
+{
+    position: relative;
+    text-align: center;
+    font-size: 50px ;
+    font-weight: 400;
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+    font-family: 'Ubuntu',sans-serif;
+}
+.contact .title::before{
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 3px;
+    bottom: 0px;
+    left: 50%;
+    background: black;
+    transform: translateX(-50%);
+}
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row .i{
+    font-size: 25px;
+    color: black;
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+}
+.contact .contact-content .info .sub-title{
+    color: black;
+
+}
+.contact .right form .fields{
+    display: flex;
+}
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border:1px solid black;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins',sans-serif;
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .email{
+    margin-left: 10px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+.contact .right form .button-area{
+    height: 45px;
+    width: 170px;
+}
+.contact .right form .button-area button{
+    width:100%;
+    height: 100%;
+    border: 1px solid black;
+    background: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.contact .right form .button-area button:hover{
+    color: black;
+    background:white;
+}
+
+/* footer section styling  */
+footer{
+    background: black;
+    padding: 20px 23px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* scroll button styling */
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: gray;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: white;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+
+}
+/* interactive media queries */
+
+@media (max-width: 1300px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+    
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .experience .exp-content .card{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .education .education-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .experience .exp-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .education .skills-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
